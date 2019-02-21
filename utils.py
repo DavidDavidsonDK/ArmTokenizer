@@ -6,3 +6,6 @@ def overrides(interface_class):
 			raise NotImplementedError("Override error: Protacol {}".format(interface_class.__name__))
 		return method
 	return overrider
+
+
+#TODO

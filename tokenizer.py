@@ -31,34 +31,35 @@ class Tokenizer(ArmTokenizerBase):
 		]
 	
 	TOKENIZATION_RULES = [
-	(1,  u'[' + Punct.inter() + ']'), # 5°С, $5, -5, +5
-	(2,  Punct.metric(double=True)), # 5կմ/ժ, 5մ/վ
-	(3,  u'[0-2]?[0-9]:[0-5]?[0-9]'), #times, e.g. 5:23'
-	(3.1,u'\d+[\.|,|/]{1}\d+[\.|,|/]{1}\d+'), #date, e.g.10.16.2000 
-	(4,  u'[0-9]+[\.,/]{1}[0-9]+'), #numbers 2.5 2,5 2/3
-	(4.1,u'[\.,][0-9]+'), #numbers .5 , .08
-	(4.2,u'[0-9]+' + '(' + Punct('gtcik').regex() + ')' + '[0-9]+'+ '(' + Punct('gtcik').regex() + ')?' +'([ա-ֆԱ-Ֆևև]+)?' ), # 2-3-րդ
-	(5.1, u'[ա-ֆԱ-Ֆևa-z]'+ '(' + Punct('gtcik').regex() + ')' + '[0-9]+' ), #Դ-30
-	(5.2, u'[0-9]+'+'((' + Punct('gtcik').regex() + ')'+'[ա-ֆԱ-Ֆևև]+)?'), #1-ին , 5-ական
-	(6, u'([a-zA-Z0-9_.+'+ Punct('gtcik').regex() +']+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)'), #E-mail
-	(7, u'[@,#][ա-ֆԱ-Ֆևa-z0-9_-]{3,}'), # @nickname , #hashtag 
-	(16.0, u'մեկ' + '(' + Punct('gtcik').regex() + ')' + 'երկու'), #special-names
-	(16.1, u'Սայաթ' + '(' + Punct('gtcik').regex() + ')' + 'Նովա'),
-	#.
-	#.
-	#.
-	(17, u'[a-zA-Z0-9-_]+\.[\.a-zA-Z]*'), # news.am
-	(17.1, u'(http(s)?:)//([a-zA-Z0-9\.\/$@-_&+:%\?=])*'),#(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%,[0-9a-fA-F][0-9a-fA-F]))+'), #URL
-	(18, u'[a-zA-Z]+'), #english word
-	(19, u'[Ա-Ֆևа-яА-ЯЁёA-Za-z]+'+ '(' + Punct('gtcik').regex() + ')' +'[ա-ֆև]+'), #ՀՀԿ-ական 
-	(20, u'[ա-ֆԱ-Ֆևև]+[' + Punct.all(linear=False) + ']{1,3}'), #հեյ~(հե~յ)
-	(2.1, u'(' + Punct.metric(double=False)+ ')'+'([' + Punct('gtcik').regex() + ']){1}' +'[ա-ֆև]+') ,# 5կմ, 5մ
-	(21, u'[ա-ֆԱ-Ֆևև]+'), #simple word 
-	(22, u'[а-яА-ЯЁё]+'), #russian word
-	(23, u'\.{3,4}'), #.... , ...
+	#TODO
+	# (1,  u'[' + Punct.inter() + ']'), # 5°С, $5, -5, +5
+	# (2,  Punct.metric(double=True)), # 5կմ/ժ, 5մ/վ
+	# (3,  u'[0-2]?[0-9]:[0-5]?[0-9]'), #times, e.g. 5:23'
+	# (3.1,u'\d+[\.|,|/]{1}\d+[\.|,|/]{1}\d+'), #date, e.g.10.16.2000 
+	# (4,  u'[0-9]+[\.,/]{1}[0-9]+'), #numbers 2.5 2,5 2/3
+	# (4.1,u'[\.,][0-9]+'), #numbers .5 , .08
+	# (4.2,u'[0-9]+' + '(' + Punct('gtcik').regex() + ')' + '[0-9]+'+ '(' + Punct('gtcik').regex() + ')?' +'([ա-ֆԱ-Ֆևև]+)?' ), # 2-3-րդ
+	# (5.1, u'[ա-ֆԱ-Ֆևa-z]'+ '(' + Punct('gtcik').regex() + ')' + '[0-9]+' ), #Դ-30
+	# (5.2, u'[0-9]+'+'((' + Punct('gtcik').regex() + ')'+'[ա-ֆԱ-Ֆևև]+)?'), #1-ին , 5-ական
+	# (6, u'([a-zA-Z0-9_.+'+ Punct('gtcik').regex() +']+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)'), #E-mail
+	# (7, u'[@,#][ա-ֆԱ-Ֆևa-z0-9_-]{3,}'), # @nickname , #hashtag 
+	# (16.0, u'մեկ' + '(' + Punct('gtcik').regex() + ')' + 'երկու'), #special-names
+	# (16.1, u'Սայաթ' + '(' + Punct('gtcik').regex() + ')' + 'Նովա'),
+	# #.
+	# #.
+	# #.
+	# (17, u'[a-zA-Z0-9-_]+\.[\.a-zA-Z]*'), # news.am
+	# (17.1, u'(http(s)?:)//([a-zA-Z0-9\.\/$@-_&+:%\?=])*'),#(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%,[0-9a-fA-F][0-9a-fA-F]))+'), #URL
+	# (18, u'[a-zA-Z]+'), #english word
+	# (19, u'[Ա-Ֆևа-яА-ЯЁёA-Za-z]+'+ '(' + Punct('gtcik').regex() + ')' +'[ա-ֆև]+'), #ՀՀԿ-ական 
+	# (20, u'[ա-ֆԱ-Ֆևև]+[' + Punct.all(linear=False) + ']{1,3}'), #հեյ~(հե~յ)
+	# (2.1, u'(' + Punct.metric(double=False)+ ')'+'([' + Punct('gtcik').regex() + ']){1}' +'[ա-ֆև]+') ,# 5կմ, 5մ
+	# (21, u'[ա-ֆԱ-Ֆևև]+'), #simple word 
+	# (22, u'[а-яА-ЯЁё]+'), #russian word
+	# (23, u'\.{3,4}'), #.... , ...
 	
-	(24, u'([' + Punct.all() + ']{1})'), #all punctuations
-	(25, u'([' + Punct.all(linear=False) + ']{1})'), #all non linear punctuations
+	# (24, u'([' + Punct.all() + ']{1})'), #all punctuations
+	# (25, u'([' + Punct.all(linear=False) + ']{1})'), #all non linear punctuations
 
   ]
 	SPECIAL_RULES = {
