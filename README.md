@@ -20,6 +20,7 @@ See  https://github.com/gorarakelyan/Hy-Tokenizer for more information
 * need to implement small functions for finding patterns
 * need to implement testing functions to validate regexs
 * need to parallelize tasks and at the end merge branches
+* apply to confessions dataset 
 
 ```python
 #In utils.py implement this functions
@@ -71,3 +72,4 @@ def all_non_linear_puncts(): # 'apostrophe', 'shesht','bacakanchakan', 'harcakan
 #                            'b_qarakusi','p_qarakusi', 'slesh']
 #
 ```
+
