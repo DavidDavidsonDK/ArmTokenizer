@@ -25,35 +25,35 @@ See  https://github.com/gorarakelyan/Hy-Tokenizer for more information
 ```python
 #In utils.py implement this functions
 
-def inter_measures(): # 5°С, $5, -5, +5
-def double_measures(): # 5կմ/ժ, 5մ/վ
-def single_measures(): # 5կմ, 5մ
+def inter_measures(): # 5°С, $5, -5, +5   #(DavPapikyan)
+def double_measures(): # 5կմ/ժ, 5մ/վ       #(DavQaramyan)
+def single_measures(): # 5կմ, 5մ           #(DavPapikyan)
 
-def time(): # 5:23
-def date(): # 10.16.2000 10/16/2000 10,16,2000
-def float_numbers(without_first=False): # 2.5 2,5 2/3
-def float_numbers(without_first=True): # .5 ,0.8
+def time(): # 5:23 #(DavQaramyan)
+def date(): # 10.16.2000 10/16/2000 10,16,2000 #(DavPapikyan)
+def float_numbers(without_first=False): # 2.5 2,5 2/3  #(DavQaramyan)
+def float_numbers(without_first=True): # .5 ,0.8 #(DavQaramyan)
 
-def postfix_1(): # 2-3-րդ
-def postfix_2(): #Դ-30
-def postfix_3(): #1-ին , 5-ական
+def postfix_1(): # 2-3-րդ   #(DavPapikyan)
+def postfix_2(): #Դ-30      #(DavPapikyan)
+def postfix_3(): #1-ին , 5-ական  #(DavPapikyan)
 
-def email(): # davitkar98@gmail.com
-def urls(): # news.am or www.news.am or https://www.aca.am
-def hashtags(): # @nickname , #hashtag
+def email(): # davitkar98@gmail.com #(DavQaramyan)
+def urls(): # news.am or www.news.am or https://www.aca.am #(DavPapikyan)
+def hashtags(): # @nickname , #hashtag #(DavQaramyan)
 
-def special_names(): #Սայաթ-Նովա ... need vocab
-def abbrivations(): # INC.
+def special_names(): #Սայաթ-Նովա ... need vocab #(DavQaramyan)
+def abbrivations(): # INC. #(DavQaramyan)
 
-def english_word(): #name
-def armenian_word(): #անուն
-def arm_postfix_word(): #ՀՀԿ-ական
-def arm_non_linear_word(): #հեյ~(հե~յ)
-def russian_word(): #имя
-def dots(): # .... ...
+def english_word(): #name #(DavPapikyan)
+def armenian_word(): #անուն #(DavQaramyan)
+def arm_postfix_word(): #ՀՀԿ-ական #(DavPapikyan)
+def arm_non_linear_word(): #հեյ~(հե~յ) #(DavQaramyan)
+def russian_word(): #имя #(DavPapikyan)
+def dots(): # .... ... #(DavQaramyan)
 
-def all_linear_puncts(): # : , ?
-def all_non_linear_puncts(): # 'apostrophe', 'shesht','bacakanchakan', 'harcakan'
+def all_linear_puncts(): # : , ?  #(DavPapikyan)
+def all_non_linear_puncts(): # 'apostrophe', 'shesht','bacakanchakan', 'harcakan' #(DavQaramyan)
 
 
 #Hints
