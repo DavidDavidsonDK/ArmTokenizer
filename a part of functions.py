@@ -30,7 +30,7 @@ def urls():
     return r'{}'.format('(?:^|\s)(https?:\/\/(?:www\.)?[\w@\.\?%&-_\/\+:=!]+\.(?:[a-zA-Z]+){2,}|(?:www\.)[\w@\.\?%&-_\/\+:=!]+\.(?:[a-zA-Z]+){2,}|[\w@\.\?%&-_\/\+:=!]+\.(?:[a-zA-Z]+){2,})(?:$|\s)')
 
 def english_word():
-    dash = (Punct('gtcik').regex() + '|-').replace('|','')
+    dash = (Punct('gtcik').regex() + '-').replace('|','')
     return r'{}'.format('(?:^|\s)([a-zA-Z' + dash + ']+)(?:$|\s)')
 
 def arm_postfix_word(): 
