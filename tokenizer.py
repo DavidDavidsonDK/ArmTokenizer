@@ -83,7 +83,7 @@ class Tokenizer(ArmTokenizerBase):
 	def cleaning(self):
 		for r in self.PURIFICATION_RULES:
 			self.text = re.sub(r[0], r[1], self.text)
-		self.text =  re.sub('[ \t\n]+', '  ',self.text).rstrip()#double spaces
+		self.text =  re.sub('[\s]+', '  ',self.text).rstrip()#double spaces
 
 		self.length = len(self.text)
 		return self
