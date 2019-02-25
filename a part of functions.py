@@ -34,11 +34,11 @@ def english_word():
     return r'{}'.format('(?:^|\s)([a-zA-Z' + dash + ']+)(?:$|\s)')
 
 def arm_postfix_word(): 
-    dash = (Punct('gtcik').regex() + '|-').replace('|','')
+    dash = (Punct('gtcik').regex() + '-').replace('|','')
     return '{}'.format('(?:^|\s)([ա-ֆԱ-Ֆև]+[' + dash + '][ա-ֆԱ-Ֆև]+)(?:$|\s)')
 
 def russian_word(): 
-    dash = (Punct('gtcik').regex() + '|-').replace('|','')
+    dash = (Punct('gtcik').regex() + '-').replace('|','')
     return r'{}'.format('(?:^|\s)([а-яА-ЯЁё' + dash + ']+)(?:$|\s)')               
 
 def all_linear_puncts(): 
